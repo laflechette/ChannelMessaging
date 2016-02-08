@@ -1,19 +1,17 @@
 package mathieu.larcher.channelmessaging;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.security.Provider;
+import com.google.gson.Gson;
+
 import java.util.HashMap;
 
 import mathieu.larcher.channelmessaging.network.RequestProvider;
@@ -55,19 +53,42 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         params.put("password", myPassword);
 
         RequestProvider np = new RequestProvider(params, "http://www.raphaelbischof.fr/messaging/?function=connect");
-        np.setOnWSRequestListener((onWSRequestListener) this);
+        np.setOnWSRequestListener(this);
         np.execute();
     }
 
     @Override
     public void onCompletedRequest(String result) {
 
-        Toast.makeText(getApplicationContext(), result, Toast.LENGTH_SHORT).show();
+        Gson gson = new Gson();
+        Login jsonObj = gson.fromJson(result, Login.class);
+
+        if (jsonObj.getCode() == 200) {
+
+            SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+            SharedPreferences.Editor editor = settings.edit();
+            editor.putString("token", jsonObj.getToken());
+            editor.commit();
+
+            Intent intent = new Intent(this, ChannelActivity.class);
+            startActivity(intent);
+
+            Toast.makeText(getApplicationContext(), jsonObj.getToken(), Toast.LENGTH_SHORT).show();
+        }
+        else {
+            onErrorRequest(result);
+        }
+
+
+
     }
 
     @Override
     public void onErrorRequest(String error) {
 
         Toast.makeText(getApplicationContext(), error, Toast.LENGTH_SHORT).show();
+
     }
+
+    public static final String PREFS_NAME = "MyPrefsFile";
 }
