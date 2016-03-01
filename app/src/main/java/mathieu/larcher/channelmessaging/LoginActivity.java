@@ -52,13 +52,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         params.put("username", myLogin);
         params.put("password", myPassword);
 
-        RequestProvider np = new RequestProvider(params, "http://www.raphaelbischof.fr/messaging/?function=connect");
+        RequestProvider np = new RequestProvider(params, "http://www.raphaelbischof.fr/messaging/?function=connect", 0);
         np.setOnWSRequestListener(this);
         np.execute();
     }
 
     @Override
-    public void onCompletedRequest(String result) {
+    public void onCompletedRequest(String result, int requestCode) {
 
         Gson gson = new Gson();
         Login jsonObj = gson.fromJson(result, Login.class);
@@ -70,7 +70,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             editor.putString("token", jsonObj.getToken());
             editor.commit();
 
-            Intent intent = new Intent(this, ChannelActivity.class);
+            Intent intent = new Intent(this, ListChannelActivity.class);
             startActivity(intent);
 
             Toast.makeText(getApplicationContext(), jsonObj.getToken(), Toast.LENGTH_SHORT).show();

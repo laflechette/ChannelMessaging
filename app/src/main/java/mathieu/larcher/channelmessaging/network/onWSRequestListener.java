@@ -5,6 +5,6 @@ package mathieu.larcher.channelmessaging.network;
  */
 public interface onWSRequestListener {
 
-    public void onCompletedRequest(String result);
+    public void onCompletedRequest(String result, int requestCode);
     public void onErrorRequest(String error);
 }

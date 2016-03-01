@@ -26,11 +26,13 @@ public class RequestProvider extends AsyncTask<String, Integer, String> {
     private ArrayList<onWSRequestListener> listeners = new ArrayList<onWSRequestListener>();
     private String requestURL = null;
     private HashMap<String, String> mapParams;
+    private int requestCode;
 
-    public RequestProvider(HashMap<String, String> params, String requestURL) {
+    public RequestProvider(HashMap<String, String> params, String requestURL, int requestCode) {
 
         this.mapParams = params;
         this.requestURL = requestURL;
+        this.requestCode = requestCode;
     }
 
 
@@ -43,7 +45,7 @@ public class RequestProvider extends AsyncTask<String, Integer, String> {
 
         for(onWSRequestListener oneListener:listeners){
 
-            oneListener.onCompletedRequest(result);
+            oneListener.onCompletedRequest(result, requestCode);
         }
     }
 

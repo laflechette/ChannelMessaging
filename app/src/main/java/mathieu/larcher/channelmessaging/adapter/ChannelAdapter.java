@@ -44,7 +44,7 @@ public class ChannelAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
 
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.custom_channel, parent, false);
+        View rowView = inflater.inflate(R.layout.adapter_list_channel, parent, false);
 
         TextView nameChannel = (TextView) rowView.findViewById(R.id.txt_view_name);
         TextView nbUser = (TextView) rowView.findViewById(R.id.txt_view_number);

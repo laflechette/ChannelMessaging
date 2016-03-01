@@ -9,14 +9,15 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="mathieu.larcher.channelmessaging.ChannelActivity">
+    tools:context=".ListChannelActivity">
 
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/lst_view_channel"
+        android:choiceMode="multipleChoice"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:choiceMode="multipleChoice" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
 </RelativeLayout>
