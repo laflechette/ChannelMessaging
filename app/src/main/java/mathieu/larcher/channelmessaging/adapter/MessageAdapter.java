@@ -23,8 +23,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-import mathieu.larcher.channelmessaging.Channel;
-import mathieu.larcher.channelmessaging.Message;
+import mathieu.larcher.channelmessaging.app_message.Message;
 import mathieu.larcher.channelmessaging.R;
 
 /**

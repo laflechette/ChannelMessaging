@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-import mathieu.larcher.channelmessaging.Channel;
+import mathieu.larcher.channelmessaging.app_message.Channel;
 import mathieu.larcher.channelmessaging.R;
 
 /**

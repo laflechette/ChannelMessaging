@@ -1,4 +1,4 @@
-package mathieu.larcher.channelmessaging;
+package mathieu.larcher.channelmessaging.app_message;
 
 import android.media.Image;
 

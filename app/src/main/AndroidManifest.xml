@@ -3,6 +3,8 @@
     package="mathieu.larcher.channelmessaging">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 
     <application
         android:allowBackup="true"
@@ -11,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".LoginActivity"
+            android:name=".app_message.LoginActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,10 +22,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ListChannelActivity"
+            android:name=".app_message.ListChannelActivity"
             android:label="@string/title_activity_channel"></activity>
         <activity
-            android:name=".MessageActivity"
+            android:name=".app_message.MessageActivity"
             android:label="@string/title_activity_channel"></activity>
     </application>
 

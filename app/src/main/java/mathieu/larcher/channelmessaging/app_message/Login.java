@@ -1,4 +1,4 @@
-package mathieu.larcher.channelmessaging;
+package mathieu.larcher.channelmessaging.app_message;
 
 /**
  * Created by mathieularchet on 08/02/2016.

@@ -1,4 +1,4 @@
-package mathieu.larcher.channelmessaging;
+package mathieu.larcher.channelmessaging.app_message;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,6 +14,7 @@ import com.google.gson.Gson;
 
 import java.util.HashMap;
 
+import mathieu.larcher.channelmessaging.R;
 import mathieu.larcher.channelmessaging.network.RequestProvider;
 import mathieu.larcher.channelmessaging.network.onWSRequestListener;
 
