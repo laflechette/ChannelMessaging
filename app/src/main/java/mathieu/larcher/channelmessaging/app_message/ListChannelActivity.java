@@ -8,8 +8,9 @@ import android.widget.AdapterView;
 
 import mathieu.larcher.channelmessaging.Fragment.MessageFragment;
 import mathieu.larcher.channelmessaging.R;
+import mathieu.larcher.channelmessaging.app_gps.GPSActivity;
 
-public class ListChannelActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class ListChannelActivity extends GPSActivity implements AdapterView.OnItemClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

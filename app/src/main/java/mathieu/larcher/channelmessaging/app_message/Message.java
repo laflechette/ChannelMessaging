@@ -13,6 +13,8 @@ public class Message {
     private String message;
     private Date date;
     private String imageUrl;
+    private double longitude;
+    private double latitude;
 
     public Message(){
 
@@ -20,11 +22,13 @@ public class Message {
 
     public String getUserName() { return username; }
 
-    public String getMessage() {
-        return message;
-    }
+    public String getMessage() { return message; }
 
     public Date getDate() { return date; }
 
     public String getImageUrl() { return imageUrl; }
+
+    public double getLongitude(){ return longitude; }
+
+    public double getLatitude(){ return latitude; }
 }
